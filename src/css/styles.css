@@ -74,6 +74,7 @@ button:focus {
     gap: 24px;
     flex-wrap: wrap;
     max-width: 1152px;
+    margin-bottom: 32px;
    
 }
 .gallery-item {
@@ -161,6 +162,14 @@ button:focus {
   );
   animation: l3 0.8s infinite alternate;
 }
-.loader.is-hidden {
+.is-hidden {
   display: none;
+}
+.load-more{
+  border-radius: 8px;
+padding: 8px 16px;
+width: 125px;
+height: 40px;
+margin-left: auto;
+margin-right: auto;
 }

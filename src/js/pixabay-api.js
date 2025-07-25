@@ -3,13 +3,15 @@ import axios from 'axios';
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '51454190-e114164169ef9dafb1528e77f';
 
-function getImagesByQuery(query) {
+function getImagesByQuery(query, page) {
   const searchParams = {
     key: API_KEY,
     q: query,
     image_type: "photo",
     orientation: "horizontal",
     safesearch: true,
+    page: page,
+    per_page: 15,
   };
   return axios
     .get(BASE_URL, {params: searchParams})

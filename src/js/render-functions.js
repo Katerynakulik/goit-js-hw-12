@@ -59,5 +59,11 @@ export function clearGallery(){
   export function hideLoader(){
     document.querySelector('.loader').classList.add('is-hidden');
  };
+ export function showLoadMoreButton(){
+    document.querySelector('.load-more').classList.remove('is-hidden');
+ };
+  export function hideLoadMoreButton(){
+    document.querySelector('.load-more').classList.add('is-hidden');
+ };
 
 console.log("mygallery", container);
