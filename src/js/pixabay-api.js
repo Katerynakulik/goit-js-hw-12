@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '51454190-e114164169ef9dafb1528e77f';
 
-function getImagesByQuery(query, page) {
+export async function getImagesByQuery(query, page) {
   const searchParams = {
     key: API_KEY,
     q: query,
@@ -13,12 +13,10 @@ function getImagesByQuery(query, page) {
     page: page,
     per_page: 15,
   };
-  return axios
-    .get(BASE_URL, {params: searchParams})
-    .then((response) => response.data)
-    .catch(error => {
-      console.error("Error fetching images:",error);
-      throw new Error("Sorry, there are no images matching your search query. Please try again!")
-    });
-};
-export {getImagesByQuery};
+  try {
+    const answer = await axios.get(BASE_URL, {params: searchParams})
+    return answer.data;
+  } catch (error) {
+    console.error("Error fetching images:",error);
+    };
+  };
